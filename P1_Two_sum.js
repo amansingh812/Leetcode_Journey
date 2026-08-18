@@ -14,7 +14,7 @@ var twoSum = function (nums, target) {
     for (let i = 0; i < nums.length; i++) {
         const sum = target - nums[i];
 
-        // Check 2 things:
+    
         // 1. Does the complement exist in the map?
         // 2. Is it a DIFFERENT index (cannot use the same element twice)?
         if (map.has(sum) && map.get(sum) !== i) {
