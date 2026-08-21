@@ -7,7 +7,7 @@ var twoSum = function (nums, target) {
     const map = new Map();
 
     for (let i = 0; i < nums.length; i++) {
-        map.set(nums[i], i);nu
+        map.set(nums[i], i);
     }
 
     // Step 2: Loop through nums again and check if complement exists in Map

@@ -18,16 +18,25 @@ function ListNode(val) {
  * @return {ListNode}
  */
 
+
 var getIntersectionNode = function (headA, headB) {
 
-    //lets first creat the node
+    if (!headA || !headB) return null;
 
-    let nerNode = new ListNode()
+    // Two pointers: when one reaches the end, redirect it to the other
+    // list's head. Because pA travels (a + c + b) and pB travels
+    // (b + c + a), they cover equal total distances and meet exactly
+    // at the intersection node (or both hit null at the same time).
+    let pA = headA;
+    let pB = headB;
 
-
-
+    while (pA !== pB) {
+        pA = pA === null ? headB : pA.next;
+        pB = pB === null ? headA : pB.next;
+    }
+ 
+    return pB; // intersection node, or null if no intersection
 };
-
 // --- Helpers to build test lists ---
 
 // Builds a linked list from an array of values, returns the head.
